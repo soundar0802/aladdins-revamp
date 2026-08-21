@@ -1,271 +1,421 @@
-// ===============================
+// ==================================================
 // LOAD COMMON HEADER
-// ===============================
-
+// ==================================================
 fetch("./header.html")
-    .then(response => response.text())
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("Failed to load header.html");
+        }
+        return response.text();
+    })
     .then(data => {
+        const headerContainer =
+            document.getElementById("common-header");
+        if (!headerContainer) {
+            return;
+        }
+        // Insert header
+        headerContainer.innerHTML = data;
 
-        document.getElementById("common-header").innerHTML = data;
-
-        // Initialize header functions
+        // Initialize hamburger / mobile menu
         initializeHeader();
 
-        // Set active navigation
+        // Initialize active navigation
         setActiveNav();
-
     })
     .catch(error => {
-        console.error("Error loading header:", error);
+        console.error(
+            "Error loading header:",
+            error
+        );
     });
 
-
-// ===============================
+// ==================================================
 // LOAD COMMON FOOTER
-// ===============================
+// ==================================================
 
 fetch("./footer.html")
-    .then(response => response.text())
+    .then(response => {
+
+        if (!response.ok) {
+            throw new Error("Failed to load footer.html");
+        }
+
+        return response.text();
+
+    })
     .then(data => {
 
-        document.getElementById("common-footer").innerHTML = data;
+        const footerContainer =
+            document.getElementById("common-footer");
+
+
+        if (!footerContainer) {
+            return;
+        }
+
+
+        // Insert footer
+        footerContainer.innerHTML = data;
+
+
+        // Initialize postcode forms
+        initializePostcodeForms();
 
     })
     .catch(error => {
-        console.error("Error loading footer:", error);
+
+        console.error(
+            "Error loading footer:",
+            error
+        );
+
     });
 
 
-// ===============================
+// ==================================================
 // INITIALIZE HEADER
-// ===============================
+// ==================================================
 
 function initializeHeader() {
 
     const openMenu =
         document.getElementById("openmenu");
 
+
     const slide =
         document.querySelector(".nav-links");
+
 
     const links =
         document.querySelectorAll(".nav-link");
 
+
     const body =
         document.getElementById("page-body");
+
 
     const overlay =
         document.getElementById("overlay");
 
 
-    // Stop if header elements don't exist
+    // ----------------------------------------------
+    // Safety check
+    // ----------------------------------------------
+
     if (!openMenu || !slide) {
         return;
     }
 
 
-    // ===============================
+    // ==================================================
     // HAMBURGER MENU
-    // ===============================
+    // ==================================================
 
-    openMenu.addEventListener("click", function () {
+    openMenu.addEventListener(
+        "click",
+        function () {
 
-        openMenu.classList.toggle("active");
+            openMenu.classList.toggle("active");
 
-        slide.classList.toggle("active");
+            slide.classList.toggle("active");
 
-        if (body) {
-            body.classList.toggle("active");
+
+            if (body) {
+
+                body.classList.toggle("active");
+
+            }
+
+
+            if (overlay) {
+
+                overlay.classList.toggle("active");
+
+            }
+
         }
-
-        if (overlay) {
-            overlay.classList.toggle("active");
-        }
-
-    });
+    );
 
 
-    // ===============================
-    // CLOSE MENU ON LINK CLICK
-    // ===============================
+    // ==================================================
+    // CLOSE MENU WHEN NAV LINK IS CLICKED
+    // ==================================================
 
     links.forEach(function (link) {
 
-        link.addEventListener("click", function () {
+        link.addEventListener(
+            "click",
+            function () {
 
-            openMenu.classList.remove("active");
+                closeMobileMenu(
+                    openMenu,
+                    slide,
+                    body,
+                    overlay
+                );
 
-            slide.classList.remove("active");
-
-            if (body) {
-                body.classList.remove("active");
             }
-
-            if (overlay) {
-                overlay.classList.remove("active");
-            }
-
-        });
+        );
 
     });
 
 
-    // ===============================
-    // ACTIVE NAVIGATION
-    // ===============================
-
-    setActiveNav(links);
-
-
-    // ===============================
-    // OVERLAY
-    // ===============================
+    // ==================================================
+    // OVERLAY CLICK
+    // ==================================================
 
     if (overlay) {
 
-        overlay.addEventListener("click", function () {
+        overlay.addEventListener(
+            "click",
+            function () {
 
-            openMenu.classList.remove("active");
+                closeMobileMenu(
+                    openMenu,
+                    slide,
+                    body,
+                    overlay
+                );
 
-            slide.classList.remove("active");
-
-            if (body) {
-                body.classList.remove("active");
             }
-
-            overlay.classList.remove("active");
-
-        });
+        );
 
     }
 
 
-    // ===============================
-    // CLOSE MENU ON DESKTOP
-    // ===============================
+    // ==================================================
+    // CLOSE MENU WHEN SWITCHING TO DESKTOP
+    // ==================================================
 
     const media =
-        window.matchMedia("(max-width: 767px)");
+        window.matchMedia(
+            "(max-width: 767px)"
+        );
 
 
-    media.addEventListener("change", function (e) {
+    media.addEventListener(
+        "change",
+        function (event) {
 
-        if (!e.matches) {
+            if (!event.matches) {
 
-            openMenu.classList.remove("active");
+                closeMobileMenu(
+                    openMenu,
+                    slide,
+                    body,
+                    overlay
+                );
 
-            slide.classList.remove("active");
-
-            if (body) {
-                body.classList.remove("active");
-            }
-
-            if (overlay) {
-                overlay.classList.remove("active");
             }
 
         }
-
-    });
+    );
 
 }
 
 
-// ===============================
+// ==================================================
+// CLOSE MOBILE MENU
+// ==================================================
+
+function closeMobileMenu(
+    openMenu,
+    slide,
+    body,
+    overlay
+) {
+
+    if (openMenu) {
+
+        openMenu.classList.remove(
+            "active"
+        );
+
+    }
+
+
+    if (slide) {
+
+        slide.classList.remove(
+            "active"
+        );
+
+    }
+
+
+    if (body) {
+
+        body.classList.remove(
+            "active"
+        );
+
+    }
+
+
+    if (overlay) {
+
+        overlay.classList.remove(
+            "active"
+        );
+
+    }
+
+}
+
+
+// ==================================================
 // ACTIVE NAVIGATION
-// ===============================
+// ==================================================
 
-function setActiveNav(navLinks) {
+function setActiveNav() {
 
-    const currentPath =
+    const navLinks =
+        document.querySelectorAll(
+            "#header .nav-link"
+        );
+
+
+    // Header has not loaded
+    if (!navLinks.length) {
+        return;
+    }
+
+
+    // ----------------------------------------------
+    // Get current URL pathname
+    // ----------------------------------------------
+
+    let currentPath =
         window.location.pathname;
 
-    const currentPage =
-        currentPath.split("/").pop();
 
+    // Remove trailing slash
+    currentPath =
+        currentPath.replace(
+            /\/+$/,
+            ""
+        );
+
+
+    // ----------------------------------------------
+    // Get current page
+    // ----------------------------------------------
+
+    let currentPage =
+        currentPath
+            .split("/")
+            .pop();
+
+
+    // ----------------------------------------------
+    // GitHub Pages root
+    //
+    // https://soundar0802.github.io/aladdins-revamp/
+    //
+    // Treat the project root as index.html
+    // ----------------------------------------------
+
+    if (
+        !currentPage ||
+        !currentPage.includes(".")
+    ) {
+
+        currentPage =
+            "index.html";
+
+    }
+
+
+    // ----------------------------------------------
+    // Check every navigation link
+    // ----------------------------------------------
 
     navLinks.forEach(function (link) {
 
-        link.classList.remove("active");
+        // Remove existing active class
+        link.classList.remove(
+            "active"
+        );
+
 
         const href =
             link.getAttribute("href");
+
 
         if (!href) {
             return;
         }
 
 
-        const linkPath =
-            new URL(
-                href,
-                window.location.origin
-            ).pathname;
+        // ------------------------------------------
+        // Get filename from href
+        // ------------------------------------------
+
+        let linkPage =
+            href
+                .split("/")
+                .filter(Boolean)
+                .pop();
 
 
-        // ===============================
-        // HOME
-        // / 
-        // /index.html
-        // ===============================
+        // Treat empty / as index.html
+        if (
+            !linkPage ||
+            linkPage === "/"
+        ) {
 
-        const isHomePage =
-            currentPath === "/" ||
-            currentPage === "" ||
-            currentPage === "index.html";
-
-
-        const isHomeLink =
-            linkPath === "/" ||
-            linkPath === "/index.html";
-
-
-        if (isHomePage && isHomeLink) {
-
-            link.classList.add("active");
-
-            return;
+            linkPage =
+                "index.html";
 
         }
 
 
-        // ===============================
-        // OTHER PAGES
-        // ===============================
+        // ------------------------------------------
+        // Compare current page with link
+        // ------------------------------------------
 
         if (
-            !isHomePage &&
-            linkPath === currentPath
+            currentPage.toLowerCase() ===
+            linkPage.toLowerCase()
         ) {
 
-            link.classList.add("active");
+            link.classList.add(
+                "active"
+            );
 
         }
 
     });
 
 }
-// ===============================
+
+
+// ==================================================
 // POSTCODE SEARCH
-// ===============================
+// ==================================================
 
 const postcodeOrderUrl =
     "https://aladdinsorder.com/location/-/";
 
 
-// ===============================
+// ==================================================
 // UK POSTCODE VALIDATION
-// ===============================
+// ==================================================
 
 function checkPostCode(input) {
 
-    let postcode = input.value.trim();
+    let postcode =
+        input.value.trim();
+
 
     const firstCharacter =
         "[abcdefghijklmnoprstuwyz]";
 
+
     const secondCharacter =
         "[abcdefghklmnopqrstuvwxy]";
+
 
     const lastCharacters =
         "[abdefghjlnpqrstuwxyz]";
@@ -286,6 +436,7 @@ function checkPostCode(input) {
             "i"
         ),
 
+
         new RegExp(
             "^(" +
             firstCharacter +
@@ -296,6 +447,7 @@ function checkPostCode(input) {
             "{2})$",
             "i"
         ),
+
 
         new RegExp(
             "^(" +
@@ -310,11 +462,15 @@ function checkPostCode(input) {
             "i"
         ),
 
+
         /^(GIR)(\s*)(0AA)$/i,
+
 
         /^(bfpo)(\s*)([0-9]{1,4})$/i,
 
+
         /^(bfpo)(\s*)(c\/o\s*[0-9]{1,3})$/i,
+
 
         /^([A-Z]{4})(\s*)(1ZZ)$/i
 
@@ -322,13 +478,26 @@ function checkPostCode(input) {
 
 
     let valid = false;
-    let formattedPostcode = postcode;
 
 
-    for (let i = 0; i < patterns.length; i++) {
+    let formattedPostcode =
+        postcode;
+
+
+    // ----------------------------------------------
+    // Validate postcode
+    // ----------------------------------------------
+
+    for (
+        let i = 0;
+        i < patterns.length;
+        i++
+    ) {
 
         const match =
-            postcode.match(patterns[i]);
+            postcode.match(
+                patterns[i]
+            );
 
 
         if (match) {
@@ -339,7 +508,10 @@ function checkPostCode(input) {
                     " " +
                     match[3].toUpperCase()
                 )
-                .replace(/C\/O\s*/i, "c/o ");
+                .replace(
+                    /C\/O\s*/i,
+                    "c/o "
+                );
 
 
             valid = true;
@@ -351,30 +523,47 @@ function checkPostCode(input) {
     }
 
 
-    input.value = formattedPostcode;
+    input.value =
+        formattedPostcode;
 
-    return valid && formattedPostcode;
+
+    return (
+        valid &&
+        formattedPostcode
+    );
 
 }
 
 
-// ===============================
+// ==================================================
 // INVALID POSTCODE ALERT
-// ===============================
+// ==================================================
 
-function customAlert(message, time, form) {
+function customAlert(
+    message,
+    time,
+    form
+) {
 
+    // Remove existing alert
     const existingAlert =
-        form.querySelector(".invalidAlert-wrapper");
+        form.querySelector(
+            ".invalidAlert-wrapper"
+        );
 
 
     if (existingAlert) {
+
         existingAlert.remove();
+
     }
 
 
+    // Create alert
     const alertWrapper =
-        document.createElement("div");
+        document.createElement(
+            "div"
+        );
 
 
     alertWrapper.className =
@@ -387,23 +576,33 @@ function customAlert(message, time, form) {
         "</span>";
 
 
-    form.appendChild(alertWrapper);
+    form.appendChild(
+        alertWrapper
+    );
 
 
-    setTimeout(function () {
+    // Remove alert after timeout
+    setTimeout(
+        function () {
 
-        if (alertWrapper.parentNode) {
-            alertWrapper.remove();
-        }
+            if (
+                alertWrapper.parentNode
+            ) {
 
-    }, time);
+                alertWrapper.remove();
+
+            }
+
+        },
+        time
+    );
 
 }
 
 
-// ===============================
-// POSTCODE FORM SUBMIT
-// ===============================
+// ==================================================
+// POSTCODE SEARCH
+// ==================================================
 
 function search(form) {
 
@@ -414,21 +613,37 @@ function search(form) {
 
 
     if (!input) {
+
         return false;
+
     }
 
 
+    // Validate postcode
     const postcode =
         checkPostCode(input);
 
+
+    // ----------------------------------------------
+    // Valid postcode
+    // ----------------------------------------------
 
     if (postcode) {
 
         window.location.href =
             postcodeOrderUrl +
-            encodeURIComponent(postcode);
+            encodeURIComponent(
+                postcode
+            );
 
-    } else {
+    }
+
+
+    // ----------------------------------------------
+    // Invalid postcode
+    // ----------------------------------------------
+
+    else {
 
         input.focus();
 
@@ -446,10 +661,10 @@ function search(form) {
 
 }
 
- 
-// ===============================
+
+// ==================================================
 // INITIALIZE POSTCODE FORMS
-// ===============================
+// ==================================================
 
 function initializePostcodeForms() {
 
@@ -459,17 +674,34 @@ function initializePostcodeForms() {
         );
 
 
+    // No postcode forms
+    if (!forms.length) {
+        return;
+    }
+
+
     forms.forEach(function (form) {
 
-        // Prevent duplicate event listeners
-        if (form.dataset.postcodeInitialized === "true") {
+        // Prevent duplicate listeners
+        if (
+            form.dataset
+                .postcodeInitialized ===
+            "true"
+        ) {
+
             return;
+
         }
 
 
-        form.dataset.postcodeInitialized =
+        form.dataset
+            .postcodeInitialized =
             "true";
 
+
+        // ------------------------------------------
+        // Submit
+        // ------------------------------------------
 
         form.addEventListener(
             "submit",

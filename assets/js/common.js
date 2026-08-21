@@ -11,6 +11,9 @@ fetch("./header.html")
         // Initialize header functions
         initializeHeader();
 
+        // Set active navigation
+        setActiveNav();
+
     })
     .catch(error => {
         console.error("Error loading header:", error);

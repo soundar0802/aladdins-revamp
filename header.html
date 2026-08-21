@@ -6,7 +6,7 @@
                 <a href="index.html">
                     <img src="./assets/images/logo/logo-white.png"
                          alt="Aladdins Logo"
-                         class="logo shadow" />
+                         class="logo shadow">
                 </a>
             </div>
 
@@ -19,25 +19,27 @@
             </div>
 
             <ul class="nav-links">
-                <li class="nav-link-li home-nav-link-li">
+
+                <li class="nav-link-li">
                     <a href="index.html" class="nav-link">home</a>
                 </li>
 
-                <li class="nav-link-li about-nav-link-li">
+                <li class="nav-link-li">
                     <a href="stores.html" class="nav-link">stores</a>
                 </li>
 
-                <li class="nav-link-li contact-nav-link-li">
+                <li class="nav-link-li">
                     <a href="event.html" class="nav-link">events</a>
                 </li>
 
-                <li class="nav-link-li menu-nav-link-li">
+                <li class="nav-link-li">
                     <a href="allergen.html" class="nav-link">allergen</a>
                 </li>
 
-                <li class="nav-link-li contact-nav-link-li">
+                <li class="nav-link-li">
                     <a href="contact.html" class="nav-link">contact us</a>
                 </li>
+
             </ul>
 
         </nav>
@@ -45,31 +47,70 @@
 </header>
 
 <script>
-    function setActiveNav(navLinks) {
+function setActiveNav() {
 
-    const currentPage =
-        window.location.pathname.split("/").pop() ||
-        "index.html";
+    let currentPage =
+        window.location.pathname
+            .split("/")
+            .filter(Boolean)
+            .pop();
+
+    // If URL is:
+    // /aladdins-revamp/
+    // then currentPage will be "aladdins-revamp"
+    //
+    // We need to treat the folder root as index.html.
+
+    if (
+        !currentPage ||
+        currentPage === "aladdins-revamp"
+    ) {
+        currentPage = "index.html";
+    }
+
+
+    const navLinks =
+        document.querySelectorAll("#header .nav-link");
+
 
     navLinks.forEach(function (link) {
 
-        link.classList.remove("active");
+        const href =
+            link.getAttribute("href");
 
-        const href = link.getAttribute("href");
 
         if (!href) return;
 
+
+        // Get only the filename
         const linkPage =
-            href.split("/").pop();
+            href
+                .split("/")
+                .filter(Boolean)
+                .pop();
+
+
+        // Remove previous active
+        link.classList.remove("active");
+
+
+        // ===============================
+        // HOME
+        // ===============================
 
         if (
             currentPage === "index.html" &&
-            (linkPage === "index.html" || linkPage === "")
+            linkPage === "index.html"
         ) {
 
             link.classList.add("active");
 
         }
+
+
+        // ===============================
+        // OTHER PAGES
+        // ===============================
 
         else if (
             currentPage === linkPage

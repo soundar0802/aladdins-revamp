@@ -433,7 +433,8 @@ section.journey-section-new h2 span {font-size: 25px;}
     .gallery-wrapper .gallery-item-name {font-size: 13px;padding: 10px 9px;}
     .home-hero-content .logo {width: 200px;}
     .footer-div {padding: 30px 0px;}
-    
+    .input-group {width: 290px;}
+    .home-hero-content {top: 30px;}
     /* allergen */
     .allergen-sec {padding: 0 0 0 0;margin-top: -30px;}
     .gallery-buttons { flex-direction: row; overflow-x: auto; padding: 0 15px; gap: 10px; }
@@ -599,6 +600,7 @@ button.contact-btn {padding:8px 35px; font-size:16px; margin:15px auto 0px auto;
 #footer .cc-content {font-size: 14px;}
 .allergy-div {padding: 30px;}
 .allergy-content-section {padding: 20px 0px 0px;}
+.home-hero-content {top: -20px;}
 }
 
 @media (max-width: 425px) {

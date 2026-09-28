@@ -73,13 +73,13 @@ if (menuNavLink && menuDropDown) {
 
 
 // home video banner
-function adjustHeroHeight() {
-    const hero = document.querySelector(".home-hero-section");
-    if (hero) {
-        const windowHeight = window.innerHeight;
-        hero.style.height = windowHeight + "px";
-    }
-}
+// function adjustHeroHeight() {
+//     const hero = document.querySelector(".home-hero-section");
+//     if (hero) {
+//         const windowHeight = window.innerHeight;
+//         hero.style.height = windowHeight + "px";
+//     }
+// }
 window.addEventListener("load", adjustHeroHeight);
 window.addEventListener("resize", adjustHeroHeight);
 

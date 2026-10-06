@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<!--
+  EmailJS template: "New Enquiry Received" (contact.html form)
+  Paste this whole file into EmailJS > Email Templates > (your template) > Content > "Edit Content" > code (<>) view.
+  Template variables are filled by assets/js/email.js.
+  Logo and icons are hosted on public.touch2success.com.
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<meta name="supported-color-schemes" content="light only">
+<title>New Enquiry Received</title>
+<style>
+  /* ---- Keep the light design in dark mode ---- */
+  :root { color-scheme: light only; supported-color-schemes: light only; }
+  @media (prefers-color-scheme: dark) {
+  .bg-1B3A7A { background-color:#1B3A7A !important; background-image:linear-gradient(#1B3A7A,#1B3A7A) !important; }
+  .bg-E52A03 { background-color:#E52A03 !important; background-image:linear-gradient(#E52A03,#E52A03) !important; }
+  .bg-EEF2F9 { background-color:#EEF2F9 !important; background-image:linear-gradient(#EEF2F9,#EEF2F9) !important; }
+  .bg-EEF3FB { background-color:#EEF3FB !important; background-image:linear-gradient(#EEF3FB,#EEF3FB) !important; }
+  .bg-FFFFFF { background-color:#FFFFFF !important; background-image:linear-gradient(#FFFFFF,#FFFFFF) !important; }
+  .c-1B3A7A, .c-1B3A7A a { color:#1B3A7A !important; }
+  .c-1F2A44, .c-1F2A44 a { color:#1F2A44 !important; }
+  .c-4C5568, .c-4C5568 a { color:#4C5568 !important; }
+  .c-C4CEE6, .c-C4CEE6 a { color:#C4CEE6 !important; }
+  .c-E52A03, .c-E52A03 a { color:#E52A03 !important; }
+  .c-FFFFFF, .c-FFFFFF a { color:#FFFFFF !important; }
+  }
+  /* Outlook.com / Outlook web dark mode */
+  [data-ogsc] .bg-1B3A7A { background-color:#1B3A7A !important; background-image:linear-gradient(#1B3A7A,#1B3A7A) !important; }
+  [data-ogsc] .bg-E52A03 { background-color:#E52A03 !important; background-image:linear-gradient(#E52A03,#E52A03) !important; }
+  [data-ogsc] .bg-EEF2F9 { background-color:#EEF2F9 !important; background-image:linear-gradient(#EEF2F9,#EEF2F9) !important; }
+  [data-ogsc] .bg-EEF3FB { background-color:#EEF3FB !important; background-image:linear-gradient(#EEF3FB,#EEF3FB) !important; }
+  [data-ogsc] .bg-FFFFFF { background-color:#FFFFFF !important; background-image:linear-gradient(#FFFFFF,#FFFFFF) !important; }
+  [data-ogsc] .c-1B3A7A, [data-ogsc] .c-1B3A7A a { color:#1B3A7A !important; }
+  [data-ogsc] .c-1F2A44, [data-ogsc] .c-1F2A44 a { color:#1F2A44 !important; }
+  [data-ogsc] .c-4C5568, [data-ogsc] .c-4C5568 a { color:#4C5568 !important; }
+  [data-ogsc] .c-C4CEE6, [data-ogsc] .c-C4CEE6 a { color:#C4CEE6 !important; }
+  [data-ogsc] .c-E52A03, [data-ogsc] .c-E52A03 a { color:#E52A03 !important; }
+  [data-ogsc] .c-FFFFFF, [data-ogsc] .c-FFFFFF a { color:#FFFFFF !important; }
+  [data-ogsb] .bg-1B3A7A { background-color:#1B3A7A !important; background-image:linear-gradient(#1B3A7A,#1B3A7A) !important; }
+  [data-ogsb] .bg-E52A03 { background-color:#E52A03 !important; background-image:linear-gradient(#E52A03,#E52A03) !important; }
+  [data-ogsb] .bg-EEF2F9 { background-color:#EEF2F9 !important; background-image:linear-gradient(#EEF2F9,#EEF2F9) !important; }
+  [data-ogsb] .bg-EEF3FB { background-color:#EEF3FB !important; background-image:linear-gradient(#EEF3FB,#EEF3FB) !important; }
+  [data-ogsb] .bg-FFFFFF { background-color:#FFFFFF !important; background-image:linear-gradient(#FFFFFF,#FFFFFF) !important; }
+  [data-ogsb] .c-1B3A7A, [data-ogsb] .c-1B3A7A a { color:#1B3A7A !important; }
+  [data-ogsb] .c-1F2A44, [data-ogsb] .c-1F2A44 a { color:#1F2A44 !important; }
+  [data-ogsb] .c-4C5568, [data-ogsb] .c-4C5568 a { color:#4C5568 !important; }
+  [data-ogsb] .c-C4CEE6, [data-ogsb] .c-C4CEE6 a { color:#C4CEE6 !important; }
+  [data-ogsb] .c-E52A03, [data-ogsb] .c-E52A03 a { color:#E52A03 !important; }
+  [data-ogsb] .c-FFFFFF, [data-ogsb] .c-FFFFFF a { color:#FFFFFF !important; }
+  @media only screen and (max-width: 620px) {
+    .container { width: 100% !important; }
+    .px { padding-left: 16px !important; padding-right: 16px !important; }
+    .h1 { font-size: 26px !important; }
+  }
+</style>
+</head>
+<body class="bg-EEF2F9" style="margin:0; padding:0; background:#EEF2F9; background-image:linear-gradient(#EEF2F9,#EEF2F9);">
+<!-- preheader (inbox preview text) -->
+<div style="display:none; max-height:0; overflow:hidden; mso-hide:all;">New enquiry from {{first_name}} {{last_name}}: {{message}}</div>
+
+<table class="bg-EEF2F9" role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#EEF2F9; background-image:linear-gradient(#EEF2F9,#EEF2F9);">
+<tr><td align="center" style="padding:24px 8px;">
+
+<table role="presentation" class="container bg-FFFFFF" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px; max-width:600px; background:#FFFFFF; background-image:linear-gradient(#FFFFFF,#FFFFFF); border-radius:16px; overflow:hidden; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;">
+
+  <!-- ===== HEADER ===== -->
+  <tr>
+    <td class="bg-FFFFFF" align="center" bgcolor="#FFFFFF" style="background:#FFFFFF; background-image:linear-gradient(#FFFFFF,#FFFFFF); padding:30px 24px 22px;">
+      <a href="https://aladdinspizza.co.uk/"><img src="https://public.touch2success.com/static/b522e239eb37b1ca32ccb97556e66f1f/img/1791305307phpZc1E7g.png" width="220" alt="Aladdin's" style="display:block; width:220px; max-width:70%; height:auto; border:0;"></a>
+    </td>
+  </tr>
+  <tr><td class="bg-E52A03" height="5" bgcolor="#E52A03" style="background:#E52A03; background-image:linear-gradient(#E52A03,#E52A03); font-size:0; line-height:0;">&nbsp;</td></tr>
+  <tr><td class="bg-1B3A7A" height="14" bgcolor="#1B3A7A" style="background:#1B3A7A; background-image:linear-gradient(#1B3A7A,#1B3A7A); font-size:0; line-height:0;">&nbsp;</td></tr>
+
+  <!-- ===== TITLE ===== -->
+  <tr>
+    <td class="px" align="center" style="padding:34px 40px 8px;">
+      <h1 class="h1 c-1B3A7A" style="margin:0; font-size:32px; line-height:1.2; font-weight:800; color:#1B3A7A;">New Enquiry <span class="c-E52A03" style="color:#E52A03;">Received</span></h1>
+      <p class="c-4C5568" style="margin:12px 0 0; font-size:15px; line-height:1.55; color:#4C5568;">You have received a new message from your website contact form.<br>Here are the details:</p>
+    </td>
+  </tr>
+
+  <!-- ===== DETAILS CARD ===== -->
+  <tr>
+    <td class="px" style="padding:22px 32px 8px;">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border:1px solid #E3E8F2; border-radius:12px;">
+        <tr><td style="padding:8px 16px;">
+
+          <!-- First name -->
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+            <tr>
+              <td style="padding:12px 0; border-bottom:1px solid #EEF2F9;">
+                <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+                  <td class="bg-EEF3FB" width="56" height="52" align="center" valign="middle" bgcolor="#EEF3FB" style="background:#EEF3FB; background-image:linear-gradient(#EEF3FB,#EEF3FB); border-radius:10px;"><img src="https://public.touch2success.com/static/b522e239eb37b1ca32ccb97556e66f1f/img/1791306039phpWcWeXh.png" width="28" height="28" alt="" style="display:block; border:0;"></td>
+                  <td style="padding-left:18px;"><div class="c-4C5568" style="font-size:13px; color:#4C5568;">First Name</div><div class="c-1B3A7A" style="font-size:18px; font-weight:700; color:#1B3A7A; padding-top:3px;">{{first_name}}</div></td>
+                </tr></table>
+              </td>
+            </tr>
+          </table>
+
+          <!-- Last name -->
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+            <tr>
+              <td style="padding:12px 0; border-bottom:1px solid #EEF2F9;">
+                <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+                  <td class="bg-EEF3FB" width="56" height="52" align="center" valign="middle" bgcolor="#EEF3FB" style="background:#EEF3FB; background-image:linear-gradient(#EEF3FB,#EEF3FB); border-radius:10px;"><img src="https://public.touch2success.com/static/b522e239eb37b1ca32ccb97556e66f1f/img/1791306039phpWcWeXh.png" width="28" height="28" alt="" style="display:block; border:0;"></td>
+                  <td style="padding-left:18px;"><div class="c-4C5568" style="font-size:13px; color:#4C5568;">Last Name</div><div class="c-1B3A7A" style="font-size:18px; font-weight:700; color:#1B3A7A; padding-top:3px;">{{last_name}}</div></td>
+                </tr></table>
+              </td>
+            </tr>
+          </table>
+
+          <!-- Phone -->
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+            <tr>
+              <td style="padding:12px 0; border-bottom:1px solid #EEF2F9;">
+                <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+                  <td class="bg-EEF3FB" width="56" height="52" align="center" valign="middle" bgcolor="#EEF3FB" style="background:#EEF3FB; background-image:linear-gradient(#EEF3FB,#EEF3FB); border-radius:10px;"><img src="https://public.touch2success.com/static/b522e239eb37b1ca32ccb97556e66f1f/img/1791306039phpFKOE3M.png" width="28" height="28" alt="" style="display:block; border:0;"></td>
+                  <td style="padding-left:18px;"><div class="c-4C5568" style="font-size:13px; color:#4C5568;">Phone Number</div><div class="c-1B3A7A" style="font-size:18px; font-weight:700; color:#1B3A7A; padding-top:3px;"><a class="c-1B3A7A" href="tel:{{phone}}" style="color:#1B3A7A; text-decoration:none;">{{phone}}</a></div></td>
+                </tr></table>
+              </td>
+            </tr>
+          </table>
+
+          <!-- Email -->
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+            <tr>
+              <td style="padding:12px 0; border-bottom:1px solid #EEF2F9;">
+                <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+                  <td class="bg-EEF3FB" width="56" height="52" align="center" valign="middle" bgcolor="#EEF3FB" style="background:#EEF3FB; background-image:linear-gradient(#EEF3FB,#EEF3FB); border-radius:10px;"><img src="https://public.touch2success.com/static/b522e239eb37b1ca32ccb97556e66f1f/img/1791306039phpOD849h.png" width="28" height="28" alt="" style="display:block; border:0;"></td>
+                  <td style="padding-left:18px;"><div class="c-4C5568" style="font-size:13px; color:#4C5568;">Email</div><div class="c-1B3A7A" style="font-size:18px; font-weight:700; color:#1B3A7A; padding-top:3px; word-break:break-all;"><a class="c-1B3A7A" href="mailto:{{email}}" style="color:#1B3A7A; text-decoration:none;">{{email}}</a></div></td>
+                </tr></table>
+              </td>
+            </tr>
+          </table>
+
+          <!-- Message -->
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+            <tr>
+              <td style="padding:12px 0;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+                  <td width="56" height="52" align="center" valign="top" style="padding:0;">
+                    <table role="presentation" width="56" cellpadding="0" cellspacing="0" border="0"><tr><td class="bg-EEF3FB" width="56" height="52" align="center" valign="middle" bgcolor="#EEF3FB" style="background:#EEF3FB; background-image:linear-gradient(#EEF3FB,#EEF3FB); border-radius:10px;"><img src="https://public.touch2success.com/static/b522e239eb37b1ca32ccb97556e66f1f/img/1791306039phpbHxvgN.png" width="28" height="28" alt="" style="display:block; border:0;"></td></tr></table>
+                  </td>
+                  <td valign="top" style="padding-left:18px;">
+                    <div class="c-4C5568" style="font-size:13px; color:#4C5568;">Message</div>
+                    <div class="bg-EEF2F9 c-1F2A44" style="margin-top:8px; background:#EEF2F9; background-image:linear-gradient(#EEF2F9,#EEF2F9); border-radius:10px; padding:16px 18px; font-size:15px; line-height:1.6; color:#1F2A44; white-space:pre-line;">{{message}}</div>
+                  </td>
+                </tr></table>
+              </td>
+            </tr>
+          </table>
+
+          <!-- Submitted -->
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+            <tr>
+              <td class="c-4C5568" style="padding:10px 0 12px; border-top:1px solid #EEF2F9; font-size:13px; color:#4C5568;">
+                Submitted: <strong class="c-1B3A7A" style="color:#1B3A7A;">{{submitted_at}}</strong>
+              </td>
+            </tr>
+          </table>
+
+        </td></tr>
+      </table>
+    </td>
+  </tr>
+
+  <!-- ===== BUTTON ===== -->
+  <tr>
+    <td align="center" style="padding:26px 24px 30px;">
+      <!--[if mso]>
+      <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="mailto:{{email}}" style="height:54px;v-text-anchor:middle;width:320px;" arcsize="50%" stroke="f" fillcolor="#E52A03">
+        <center class="c-FFFFFF" style="color:#ffffff;font-family:Arial,sans-serif;font-size:18px;font-weight:bold;">REPLY TO ENQUIRY</center>
+      </v:roundrect>
+      <![endif]-->
+      <!--[if !mso]><!-->
+      <a class="bg-E52A03 c-FFFFFF" href="mailto:{{email}}?subject=Re%3A%20Your%20enquiry%20to%20Aladdin's" style="display:inline-block; background:#E52A03; background-image:linear-gradient(#E52A03,#E52A03); color:#FFFFFF; text-decoration:none; font-size:18px; font-weight:800; letter-spacing:1px; padding:16px 48px; border-radius:40px;">REPLY TO ENQUIRY &nbsp;&rarr;</a>
+      <!--<![endif]-->
+    </td>
+  </tr>
+
+  <!-- ===== FOOTER ===== -->
+  <tr><td class="bg-1B3A7A" height="14" bgcolor="#1B3A7A" style="background:#1B3A7A; background-image:linear-gradient(#1B3A7A,#1B3A7A); font-size:0; line-height:0;">&nbsp;</td></tr>
+  <tr><td class="bg-E52A03" height="5" bgcolor="#E52A03" style="background:#E52A03; background-image:linear-gradient(#E52A03,#E52A03); font-size:0; line-height:0;">&nbsp;</td></tr>
+  <tr>
+    <td class="bg-1B3A7A" align="center" bgcolor="#1B3A7A" style="background:#1B3A7A; background-image:linear-gradient(#1B3A7A,#1B3A7A); padding:22px 24px 24px;">
+      <p class="c-C4CEE6" style="margin:0; font-size:13px; color:#C4CEE6;">Sent from the contact form on <a class="c-FFFFFF" href="https://aladdinspizza.co.uk/contact.html" style="color:#FFFFFF; text-decoration:underline;">aladdinspizza.co.uk</a></p>
+    </td>
+  </tr>
+
+</table>
+
+</td></tr>
+</table>
+</body>
+</html>

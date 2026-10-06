@@ -394,6 +394,10 @@ section.journey-section-new h3 {color:var(--secondary-color);}
 .card.form-card .form-label {font-size:18px; font-family:'Manrope'; margin-bottom:0px; color:var(--primary-color);}
 button.contact-btn {padding:15px 40px; font-size:20px; font-family:"Gasoek One", sans-serif; text-transform:uppercase; margin:25px 0px 0px; display:block; background:var(--primary-color); color:#fff; border-radius:30px; cursor:pointer; transition:all 0.3s ease;-webkit-font-smoothing: antialiased;}
 button.contact-btn:hover {background:var(--secondary-color);}
+button.contact-btn:disabled {opacity:.6; cursor:not-allowed;}
+.contact-status {display:none; margin:20px 0 0; padding:14px 18px; border-radius:10px; font-family:'Manrope'; font-size:16px; text-align:left;}
+.contact-status--ok {background:#E3F6EA; color:#126B34; border:1px solid #A9DFBC;}
+.contact-status--error {background:#FDE6E1; color:#B22303; border:1px solid #F5B5A6;}
 img.contact-img {position:absolute; bottom:0px; right:-120px; z-index:0;}
 .card.form-card .error {border-color:var(--secondary-color) !important; box-shadow:0 0 0 3px rgba(231,76,60,0.07);}
 .card.form-card .error-message {color:var(--secondary-color); font-size:16px; font-family:'Manrope'; max-width:fit-content;}

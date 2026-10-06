@@ -80,8 +80,8 @@ if (menuNavLink && menuDropDown) {
 //         hero.style.height = windowHeight + "px";
 //     }
 // }
-window.addEventListener("load", adjustHeroHeight);
-window.addEventListener("resize", adjustHeroHeight);
+// window.addEventListener("load", adjustHeroHeight);
+// window.addEventListener("resize", adjustHeroHeight);
 
 
 // franchise form with Selectize support

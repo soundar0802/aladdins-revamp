@@ -27,13 +27,13 @@ const STORES = [
     "mapUrl": "https://maps.app.goo.gl/fyyzr4urCWrDkeXC7",
     "orderUrl": "https://aladdinsorder.com/brownhills/aladdins-brownhills/ordernow",
     "hours": {
-      "mon": "12 PM - 3 AM",
-      "tue": "12 PM - 3 AM",
-      "wed": "12 PM - 3 AM",
-      "thu": "12 PM - 3 AM",
-      "fri": "12 PM - 3 AM",
-      "sat": "12 PM - 3 AM",
-      "sun": "12 PM - 3 AM"
+      "mon": "12 PM - 1 AM",
+      "tue": "12 PM - 1 AM",
+      "wed": "12 PM - 1 AM",
+      "thu": "12 PM - 1 AM",
+      "fri": "12 PM - 1 AM",
+      "sat": "12 PM - 1 AM",
+      "sun": "12 PM - 1 AM"
     }
   },
   {
@@ -103,8 +103,8 @@ const STORES = [
       "tue": "12 PM - 12 AM",
       "wed": "12 PM - 12 AM",
       "thu": "12 PM - 12 AM",
-      "fri": "12 PM - 1 AM",
-      "sat": "12 PM - 1 AM",
+      "fri": "12 PM - 12 AM",
+      "sat": "12 PM - 12 AM",
       "sun": "12 PM - 12 AM"
     }
   },
@@ -117,13 +117,13 @@ const STORES = [
     "mapUrl": "https://maps.app.goo.gl/cDHAaHHP6cxA9h9B9",
     "orderUrl": "https://aladdinsorder.com/wednesbury/aladdins/ordernow",
     "hours": {
-      "mon": "3 PM - 3 AM",
-      "tue": "3 PM - 3 AM",
-      "wed": "3 PM - 3 AM",
-      "thu": "3 PM - 3 AM",
-      "fri": "3 PM - 3:05 AM",
-      "sat": "3 PM - 3:05 AM",
-      "sun": "3 PM - 3:05 AM"
+      "mon": "12 PM - 3 AM",
+      "tue": "12 PM - 3 AM",
+      "wed": "12 PM - 3 AM",
+      "thu": "12 PM - 3 AM",
+      "fri": "12 PM - 3 AM",
+      "sat": "12 PM - 3 AM",
+      "sun": "12 PM - 3 AM"
     }
   },
   {
@@ -135,13 +135,13 @@ const STORES = [
     "mapUrl": "https://maps.app.goo.gl/WvGHKJ1cCQZfqea99",
     "orderUrl": "https://aladdinsorder.com/willenhall/aladdins-pizza-willenhall/ordernow",
     "hours": {
-      "mon": "3 PM - 3 AM",
-      "tue": "3 PM - 3 AM",
-      "wed": "3 PM - 3 AM",
-      "thu": "3 PM - 3 AM",
-      "fri": "3 PM - 3 AM",
-      "sat": "3 PM - 3 AM",
-      "sun": "3 PM - 3 AM"
+      "mon": "12 PM - 3 AM",
+      "tue": "12 PM - 3 AM",
+      "wed": "12 PM - 3 AM",
+      "thu": "12 PM - 3 AM",
+      "fri": "12 PM - 3 AM",
+      "sat": "12 PM - 3 AM",
+      "sun": "12 PM - 3 AM"
     }
   },
   {
@@ -153,13 +153,13 @@ const STORES = [
     "mapUrl": "https://maps.app.goo.gl/37CBwbXufCzJysKx9",
     "orderUrl": "https://aladdinsorder.com/wolverhampton/aladdins-pizza-wolverhampton/ordernow",
     "hours": {
-      "mon": "3 PM - 3 AM",
-      "tue": "3 PM - 3 AM",
-      "wed": "3 PM - 3 AM",
-      "thu": "3 PM - 3 AM",
-      "fri": "3 PM - 3 AM",
-      "sat": "3 PM - 3 AM",
-      "sun": "3 PM - 3 AM"
+      "mon": "12 PM - 3 AM",
+      "tue": "12 PM - 3 AM",
+      "wed": "12 PM - 3 AM",
+      "thu": "12 PM - 3 AM",
+      "fri": "12 PM - 3 AM",
+      "sat": "12 PM - 3 AM",
+      "sun": "12 PM - 3 AM"
     }
   },
   {
@@ -171,13 +171,13 @@ const STORES = [
     "mapUrl": "https://maps.app.goo.gl/jYwz992ARxRebzGaA",
     "orderUrl": "https://aladdinsorder.com/great-barr/aladdins-pizza-great-barr/ordernow",
     "hours": {
-      "mon": "3 PM - 3 AM",
-      "tue": "3 PM - 3 AM",
-      "wed": "3 PM - 3 AM",
-      "thu": "3 PM - 3 AM",
-      "fri": "3 PM - 3 AM",
-      "sat": "3 PM - 3 AM",
-      "sun": "3 PM - 3 AM"
+      "mon": "3:01 PM - 3:01 AM",
+      "tue": "3:01 PM - 3:01 AM",
+      "wed": "3:01 PM - 3:01 AM",
+      "thu": "3:01 PM - 3:01 AM",
+      "fri": "3:01 PM - 3:01 AM",
+      "sat": "3:01 PM - 3:01 AM",
+      "sun": "3:01 PM - 3:01 AM"
     }
   },
   {
@@ -207,13 +207,13 @@ const STORES = [
     "mapUrl": "https://maps.app.goo.gl/U2kM6yiBoRLh2tA98",
     "orderUrl": "https://aladdinsorder.com/stafford/aladdins-pizza-stafford/ordernow",
     "hours": {
-      "mon": "12 PM - 12 AM",
-      "tue": "12 PM - 12 AM",
-      "wed": "12 PM - 12 AM",
-      "thu": "12 PM - 12 AM",
-      "fri": "12 PM - 12 AM",
-      "sat": "12 PM - 12 AM",
-      "sun": "12 PM - 12 AM"
+      "mon": "3 PM - 3 AM",
+      "tue": "3 PM - 3 AM",
+      "wed": "3 PM - 3 AM",
+      "thu": "3 PM - 3 AM",
+      "fri": "3 PM - 3 AM",
+      "sat": "3 PM - 3 AM",
+      "sun": "3 PM - 3 AM"
     }
   },
   {
@@ -225,13 +225,13 @@ const STORES = [
     "mapUrl": "https://maps.app.goo.gl/eQFfyJCrbYKhmVJG7",
     "orderUrl": "https://aladdinsorder.com/netherton/aladdins-pizza-netherton/ordernow",
     "hours": {
-      "mon": "12 PM - 11 PM",
-      "tue": "12 PM - 11 PM",
-      "wed": "12 PM - 11 PM",
-      "thu": "12 PM - 11 PM",
-      "fri": "12 PM - 11 PM",
-      "sat": "12 PM - 11 PM",
-      "sun": "12 PM - 11 PM"
+      "mon": "12 PM - 12 AM",
+      "tue": "12 PM - 12 AM",
+      "wed": "12 PM - 12 AM",
+      "thu": "12 PM - 12 AM",
+      "fri": "12 PM - 1 AM",
+      "sat": "12 PM - 1 AM",
+      "sun": "12 PM - 12 AM"
     }
   },
   {
@@ -243,13 +243,13 @@ const STORES = [
     "mapUrl": "https://maps.app.goo.gl/Bpu4K3J5mPfCDsTg8",
     "orderUrl": "https://aladdinsorder.com/birmingham/aladdins-longbridge/ordernow",
     "hours": {
-      "mon": "12 PM - 3 AM",
-      "tue": "12 PM - 3 AM",
-      "wed": "12 PM - 3 AM",
-      "thu": "12 PM - 3 AM",
-      "fri": "12 PM - 3 AM",
-      "sat": "12 PM - 3 AM",
-      "sun": "12 PM - 3 AM"
+      "mon": "12 PM - 12 AM",
+      "tue": "12 PM - 12 AM",
+      "wed": "12 PM - 12 AM",
+      "thu": "12 PM - 12 AM",
+      "fri": "12 PM - 12 AM",
+      "sat": "12 PM - 12 AM",
+      "sun": "12 PM - 12 AM"
     }
   },
   {
@@ -261,13 +261,13 @@ const STORES = [
     "mapUrl": "https://maps.app.goo.gl/VVoEH6VaKbumr7Zz7",
     "orderUrl": "https://aladdinsorder.com/handsacre/aladdins-pizza-handsacre/ordernow",
     "hours": {
-      "mon": "12 PM - 10 PM",
-      "tue": "12 PM - 10 PM",
-      "wed": "12 PM - 10 PM",
-      "thu": "12 PM - 10 PM",
-      "fri": "12 PM - 11 PM",
-      "sat": "12 PM - 11 PM",
-      "sun": "12 PM - 10 PM"
+      "mon": "4 PM - 10 PM",
+      "tue": "4 PM - 10 PM",
+      "wed": "4 PM - 10 PM",
+      "thu": "4 PM - 10 PM",
+      "fri": "2 PM - 11 PM",
+      "sat": "2 PM - 11 PM",
+      "sun": "2 PM - 10 PM"
     }
   },
   {
@@ -297,13 +297,13 @@ const STORES = [
     "mapUrl": "https://maps.app.goo.gl/A3VMZKUdjzF4JKNd7",
     "orderUrl": "https://aladdinsorder.com/stoke-on-trent/aladdins-stoke/ordernow",
     "hours": {
-      "mon": "12 PM - 3 AM",
-      "tue": "12 PM - 3 AM",
-      "wed": "12 PM - 3 AM",
-      "thu": "12 PM - 3 AM",
-      "fri": "12 PM - 3 AM",
-      "sat": "12 PM - 3 AM",
-      "sun": "12 PM - 3 AM"
+      "mon": "3 PM - 3 AM",
+      "tue": "3 PM - 3 AM",
+      "wed": "3 PM - 3 AM",
+      "thu": "3 PM - 3 AM",
+      "fri": "3 PM - 3 AM",
+      "sat": "3 PM - 3 AM",
+      "sun": "3 PM - 3 AM"
     }
   },
   {
